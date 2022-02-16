@@ -1,4 +1,4 @@
-# ProjetoIntegrador
+# Projeto Integrador
 ##
 Participantes:  
 Ana Luiza Lamas de Andrade

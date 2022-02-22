@@ -12,13 +12,19 @@
 		</buildCommand>
 		<buildCommand>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 288b272771fa44ffd5aaef3754052c5eb675aebe
 			<name>org.springframework.ide.eclipse.boot.validation.springbootbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
 =======
 >>>>>>> 3422e3da1f9b06a39394ebee95adb38806a2a9d1
+=======
+>>>>>>> 288b272771fa44ffd5aaef3754052c5eb675aebe
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>

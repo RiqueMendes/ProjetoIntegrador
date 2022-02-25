@@ -1,3 +1,7 @@
+/*
+ * Responsável pela inserção dos métodos na tabela;
+ */
+
 package com.ProjetoIntegrador.feeling.controller;
 
 import java.util.List;

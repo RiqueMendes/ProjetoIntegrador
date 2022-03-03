@@ -1,5 +1,10 @@
 package com.ProjetoIntegrador.feeling.model;
 
+/*
+    Responsavel pela criação da tabela Theme, com os parametros determinados pelo comando "size",
+    e também foram adicionados os getters e setters.
+*/
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

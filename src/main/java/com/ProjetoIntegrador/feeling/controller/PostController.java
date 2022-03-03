@@ -1,11 +1,14 @@
 package com.ProjetoIntegrador.feeling.controller;
 
+/*
+  A classe "Controller" Foi criada para organizar as requisições que vão ser feitas, como "post"(postagem), "put"(atualizar)
+  "delete"(deletar), e "GetMapping"(seleção dos dados).
+*/
+
 import java.util.List;
 
 import com.ProjetoIntegrador.feeling.model.Post;
 import com.ProjetoIntegrador.feeling.repository.PostRepository;
-
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

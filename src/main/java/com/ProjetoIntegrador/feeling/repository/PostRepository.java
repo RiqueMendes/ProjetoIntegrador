@@ -1,5 +1,9 @@
 package com.ProjetoIntegrador.feeling.repository;
 
+/*
+    Responsavel pela ligação entre tabela e banco de dados.
+*/
+
 import java.util.List;
 
 import com.ProjetoIntegrador.feeling.model.Post;

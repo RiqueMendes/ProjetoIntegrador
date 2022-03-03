@@ -33,3 +33,5 @@ Text  - corpo da postagem
 Anonymous - para a não identificação do usuário
 Date - data da publicação
 Photo - opcional para representação e compartilhamento
+
+

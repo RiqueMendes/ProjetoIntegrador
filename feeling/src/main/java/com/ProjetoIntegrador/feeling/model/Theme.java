@@ -9,8 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "tb_tema")
-public class Tema {
+@Table(name = "tb_theme")
+public class Theme {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

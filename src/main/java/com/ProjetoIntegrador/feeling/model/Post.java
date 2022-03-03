@@ -1,5 +1,10 @@
 package com.ProjetoIntegrador.feeling.model;
 
+/*
+    Responsavel pela criação da tabela Post, com os parametros determinados pelo comando "size",
+    e também foram adicionados os getters e setters.
+*/
+
 import java.util.Date;
 
 import javax.persistence.Entity;

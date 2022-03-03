@@ -1,5 +1,9 @@
 package com.ProjetoIntegrador.feeling.model;
 
+/*
+    Responsavel pela criação da tabela User, criando também os getters e setters.
+*/
+                              
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

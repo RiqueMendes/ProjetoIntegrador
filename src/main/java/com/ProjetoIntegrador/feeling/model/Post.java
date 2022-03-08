@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "tb_post")
 public class Post {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -33,7 +33,7 @@ public class Post {
 
     @Size(max = 1500)
     private String text;
-    
+
     @NotNull
     private boolean anonymous;
 
@@ -49,8 +49,7 @@ public class Post {
 
     @ManyToOne
     @JsonIgnoreProperties("post")
-    private User user;
-    
+    private UserModel user;
 
     public long getId() {
         return id;
@@ -107,7 +106,5 @@ public class Post {
     public void setTheme(Theme theme) {
         this.theme = theme;
     }
-
-
 
 }

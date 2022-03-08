@@ -9,8 +9,10 @@ import com.ProjetoIntegrador.feeling.repository.UserRepository;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class UserService {
@@ -19,12 +21,22 @@ public class UserService {
     private UserRepository repository;
 
     public UserModel registerUser(UserModel user) {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        String passwordEncoder = encoder.encode(user.getPassword());
-        user.setPassword(passwordEncoder);
+        Optional<UserModel> userM = repository.findByEmail(user.getEmail());
 
-        return repository.save(user);
+        if (userM.isPresent()) {
+
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email ja cadastrado");
+
+        } else {
+
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+            String passwordEncoder = encoder.encode(user.getPassword());
+            user.setPassword(passwordEncoder);
+
+            return repository.save(user);
+        }
     }
 
     public Optional<UserLoginDTO> userLogin(Optional<UserLoginDTO> user) {
@@ -44,6 +56,5 @@ public class UserService {
         }
         return null;
     }
-
 
 }

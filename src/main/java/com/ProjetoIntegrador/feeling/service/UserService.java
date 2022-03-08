@@ -18,7 +18,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public UserModel registeUser(UserModel user) {
+    public UserModel registerUser(UserModel user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
         String passwordEncoder = encoder.encode(user.getPassword());
@@ -27,7 +27,7 @@ public class UserService {
         return repository.save(user);
     }
 
-    public Optional<UserLoginDTO> UserLogin(Optional<UserLoginDTO> user) {
+    public Optional<UserLoginDTO> userLogin(Optional<UserLoginDTO> user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         Optional<UserModel> userM = repository.findByEmail(user.get().getEmail());
 

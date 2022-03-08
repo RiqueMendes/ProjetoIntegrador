@@ -1,5 +1,10 @@
 package com.ProjetoIntegrador.feeling.security;
 
+/*
+ * implementação do UserDetails do spring security
+ * the code implements Spring Security to UserDetails
+ */
+
 import java.util.Collection;
 
 import com.ProjetoIntegrador.feeling.model.UserModel;

@@ -1,5 +1,10 @@
 package com.ProjetoIntegrador.feeling.security;
 
+/*
+ * Classe criada para verificação e validação de dados do usuario
+ * Class created to verify and validate the user data 
+ */
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;

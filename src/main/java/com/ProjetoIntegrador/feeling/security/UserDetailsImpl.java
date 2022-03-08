@@ -2,8 +2,6 @@ package com.ProjetoIntegrador.feeling.security;
 
 import java.util.Collection;
 
-import javax.validation.constraints.Email;
-
 import com.ProjetoIntegrador.feeling.model.UserModel;
 
 import org.springframework.security.core.GrantedAuthority;

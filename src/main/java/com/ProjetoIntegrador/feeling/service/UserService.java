@@ -50,6 +50,7 @@ public class UserService {
                 String authHeader = "Basic " + new String(encodeAuth);
 
                 user.get().setToken(authHeader);
+                user.get().setId(userM.get().getId());
                 user.get().setName(userM.get().getName());
             }
             return user;

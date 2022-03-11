@@ -7,6 +7,8 @@ package com.ProjetoIntegrador.feeling.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.ProjetoIntegrador.feeling.model.Post;
 import com.ProjetoIntegrador.feeling.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,11 +54,11 @@ public class PostController {
         return ResponseEntity.ok(repository.findAllByTextContainingIgnoreCase(text));
         }
     @PostMapping
-    public ResponseEntity<Post> post (@RequestBody Post post){
+    public ResponseEntity<Post> post (@Valid @RequestBody Post post){
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
     }
     @PutMapping
-    public ResponseEntity<Post> put (@RequestBody Post post){
+    public ResponseEntity<Post> put (@Valid @RequestBody Post post){
         return ResponseEntity.ok(repository.save(post));
     }
     @DeleteMapping("/{id}")

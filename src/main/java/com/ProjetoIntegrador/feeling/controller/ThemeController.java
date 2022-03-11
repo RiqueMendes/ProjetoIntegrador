@@ -6,6 +6,8 @@ package com.ProjetoIntegrador.feeling.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,12 +47,12 @@ public class ThemeController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Theme> post(@RequestBody Theme theme) {
+	public ResponseEntity<Theme> post(@Valid @RequestBody Theme theme) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(theme));
 	}
 
 	@PutMapping
-	public ResponseEntity<Theme> put(@RequestBody Theme theme) {
+	public ResponseEntity<Theme> put(@Valid @RequestBody Theme theme) {
 		return ResponseEntity.ok(repository.save(theme));
 	}
 

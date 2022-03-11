@@ -14,9 +14,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name = "tb_user")
@@ -26,16 +29,26 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
+    public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
+	}
+
+	@NotNull(message = "O campo nome é obrigatório.")
     private String name;
 
-    @NotNull
+    @Email(message = "E-mail inválido.")
+    @Schema(example = "email@email.com")
+    @NotNull(message = "O campo e-mail é obrigatório.")
     private String email;
 
-    @NotNull
+    @NotNull(message = "O campo senha é obrigatório.")
     private String password;
 
-    @OneToMany(mappedBy = "theme", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("user")
     private List<Post> post;
 

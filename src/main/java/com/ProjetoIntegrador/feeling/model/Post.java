@@ -34,7 +34,15 @@ public class Post {
     @Size(max = 1500)
     private String text;
 
-    @NotNull
+    public UserModel getUser() {
+		return user;
+	}
+
+	public void setUser(UserModel user) {
+		this.user = user;
+	}
+
+	@NotNull
     private boolean anonymous;
 
     @NotNull

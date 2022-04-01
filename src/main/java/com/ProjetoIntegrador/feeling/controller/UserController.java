@@ -21,27 +21,28 @@ import com.ProjetoIntegrador.feeling.service.UserService;
 @RequestMapping("/user")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	/*
 	 * Metodo logar
 	 */
-	
+
 	@PostMapping("/login")
-	public ResponseEntity<UserLoginDTO> autentication(@Valid @RequestBody Optional <UserLoginDTO> user){
-		return userService.userLogin(user).map(resp ->ResponseEntity.ok(resp)).orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());				
-		
+	public ResponseEntity<UserLoginDTO> autentication(@Valid @RequestBody Optional<UserLoginDTO> user) {
+		return userService.userLogin(user).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+
 	}
-	
+
 	/*
 	 * Metodo cadastrar
 	 */
-	
+
 	@PostMapping("/register")
-	public ResponseEntity<UserModel>register(@Valid @RequestBody UserModel user){
-		return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(user));		
+	public ResponseEntity<UserModel> register(@Valid @RequestBody UserModel user) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(user));
 	}
 
 }

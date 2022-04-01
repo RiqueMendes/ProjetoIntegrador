@@ -52,6 +52,8 @@ public class UserService {
                 user.get().setToken(authHeader);
                 user.get().setId(userM.get().getId());
                 user.get().setName(userM.get().getName());
+                user.get().setPhoto(userM.get().getPhoto());
+                user.get().setType(userM.get().getType());
             }
             return user;
         }

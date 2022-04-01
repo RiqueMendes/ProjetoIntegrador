@@ -30,14 +30,14 @@ public class UserModel {
     private long id;
 
     public List<Post> getPost() {
-		return post;
-	}
+        return post;
+    }
 
-	public void setPost(List<Post> post) {
-		this.post = post;
-	}
+    public void setPost(List<Post> post) {
+        this.post = post;
+    }
 
-	@NotNull(message = "O campo nome é obrigatório.")
+    @NotNull(message = "O campo nome é obrigatório.")
     private String name;
 
     @Email(message = "E-mail inválido.")
@@ -47,6 +47,26 @@ public class UserModel {
 
     @NotNull(message = "O campo senha é obrigatório.")
     private String password;
+
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    private String type;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("user")

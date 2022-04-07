@@ -35,8 +35,7 @@ public class UserController {
 
 	@PostMapping("/login")
 	public ResponseEntity<UserLoginDTO> autentication(@Valid @RequestBody Optional<UserLoginDTO> user) {
-		return userService.userLogin(user).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+		return userService.userLogin(user);
 
 	}
 

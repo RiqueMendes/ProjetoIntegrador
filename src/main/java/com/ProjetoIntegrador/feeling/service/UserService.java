@@ -41,7 +41,7 @@ public class UserService {
         }
     }
 
-    public Optional<UserLoginDTO> userLogin(Optional<UserLoginDTO> user) {
+    public ResponseEntity<UserLoginDTO> userLogin(Optional<UserLoginDTO> user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         Optional<UserModel> userM = repository.findByEmail(user.get().getEmail());
 
@@ -56,10 +56,12 @@ public class UserService {
                 user.get().setName(userM.get().getName());
                 user.get().setPhoto(userM.get().getPhoto());
                 user.get().setType(userM.get().getType());
+                
+                return ResponseEntity.status(HttpStatus.OK).body(user.get());
             }
-            return user;
+            
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario nao encontrado");
     }
 
     @SuppressWarnings("rawtypes")

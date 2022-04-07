@@ -59,9 +59,9 @@ public class UserService {
                 
                 return ResponseEntity.status(HttpStatus.OK).body(user.get());
             }
-            
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Senha incorreta");        
         }
-        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario nao encontrado");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario nao encontrado");
     }
 
     @SuppressWarnings("rawtypes")

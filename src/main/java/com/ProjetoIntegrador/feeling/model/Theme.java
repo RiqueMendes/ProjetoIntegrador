@@ -40,6 +40,14 @@ public class Theme {
 	@JsonIgnoreProperties("theme")
 	private List <Post> post;
 
+	public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
+	}
+
 	public long getId() {
 		return id;
 	}

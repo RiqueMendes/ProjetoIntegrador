@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -37,6 +38,7 @@ public class UserModel {
         this.post = post;
     }
 
+    @Size(min = 3)
     @NotNull(message = "O campo nome é obrigatório.")
     private String name;
 
@@ -46,6 +48,7 @@ public class UserModel {
     private String email;
 
     @NotNull(message = "O campo senha é obrigatório.")
+    @Size(min = 6)
     private String password;
 
     private String photo;
